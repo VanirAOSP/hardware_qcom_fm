@@ -1,4 +1,5 @@
 ifneq ($(TARGET_USES_AOSP),true)
+ifneq ($(LACKS_FM),true)
 
 ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
 LOCAL_PATH:= $(call my-dir)
@@ -35,4 +36,5 @@ LOCAL_PATH := $(LOCAL_DIR_PATH)
 include $(LOCAL_PATH)/FMRecord/Android.mk
 endif # is-vendor-board-platform
 
+endif # Not (LACKS_FM)
 endif # Not (TARGET_USES_AOSP)
